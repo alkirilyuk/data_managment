@@ -15,3 +15,4 @@ SELECT movie.links.imdbid FROM movie.links WHERE  movie.links.movieid  IN ( SELE
 --запрос 7
 WITH user_ratings AS (SELECT userid, avg(rating) AS user_rating FROM movie.ratings GROUP BY userid HAVING count(rating) > 10) SELECT avg(user_rating) FROM user_ratings;
 
+--Скриншот выполнения  https://i.imgur.com/MAQU4Nj.png
