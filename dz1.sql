@@ -26,4 +26,4 @@ CREATE TABLE IF NOT EXISTS  DZ1.PERSONS2CONTENT(
     ('Пианист', 4, 'Польша, Франция, Великобритания, Германия', 120072577, 'May 24,2003'),
     ('Отель Гранд Будапешт', 5, 'Германия', 172936941, 'Jan 1,1973');
 INSERT INTO DZ1.PERSONS ( ID,  FIO)  VALUES ( 1, 'Нолан Кристофер'), ( 2,'Питер Уир'), ( 3, 'Нолан Кристофер'), (4, 'Роман Полански'), ( 5, 'Уэс Андерсон');
-INSERT INTO DZ1.PERSONS2CONTENT (  PERSONE_ID, FILM_ID, PERSONE_TYPE)  VALUES (1, 1, 'Режиссёр'), (1, 1,'Режиссёр'), (1, 1, 'Режиссёр'), (1, 1, 'Режиссёр'), (1, 1, 'Режиссёр');
+INSERT INTO DZ1.PERSONS2CONTENT (  PERSONE_ID, FILM_ID, PERSONE_TYPE)  VALUES (1, 1, 'Режиссёр'), (1, 2,'Режиссёр'), (1, 3, 'Режиссёр'), (1, 4, 'Режиссёр'), (1, 5, 'Режиссёр');
