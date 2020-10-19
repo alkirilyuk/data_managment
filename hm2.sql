@@ -7,7 +7,7 @@ SELECT * FROM movie.links WHERE (imdbid LIKE '%42') AND  (movieid > 100 AND movi
 --запрос 3
 SELECT imdbid FROM movie.links JOIN movie.ratings ON movie.ratings.movieid = movie.links.movieid WHERE rating = 5 LIMIT 10;
 --запрос 4
-SELECT COUNT(DISTINCT(movie.links.movieid)) FROM movie.links LEFT JOIN movie.ratings ON movie.ratings.movieid = movie.ratings.movieid WHERE movie.ratingsr.movieid is NULL;
+SELECT COUNT(DISTINCT(movie.links.movieid)) FROM movie.links LEFT JOIN movie.ratings ON movie.links.movieid = movie.ratings.movieid WHERE movie.ratings.movieid is NULL;
 --запрос 5
 SELECT movie.ratings.userid FROM movie.ratings WHERE rating >= 3.5 GROUP BY userid HAVING avg(rating) > 3.5 LIMIT 10;
 --запрос 6
