@@ -1,8 +1,8 @@
 SELECT 'ФИО: Kirilyuk Alyona Maksimovna';
 --Команда создания таблицы
-CREATE TABLE movies.content_genres(movieId  INT, genre VARCHAR);
+CREATE TABLE movie.content_genres(movieId  INT, genre VARCHAR);
 --Копирование данных в таблицу
-psql -U postgres -h localhost -p 5433 -c "\\copy content_genres  FROM 'data_store/raw_data/genres.csv' DELIMITER ',' CSV HEADER"
+psql -U postgres -h localhost -p 5433 -c "\\copy movie.content_genres  FROM 'data_management/data_store/raw_data/genres.csv' DELIMITER ',' CSV HEADER"
 --Запрос 3
 WITH top_rated AS (
     SELECT
@@ -28,5 +28,5 @@ INNER JOIN (
     GROUP BY movieid
 ) as genre
     ON genre.movieid = top_rated.movieid;
---Вывод результата в файл    
-psql -U postgres -h localhost -p 5433 -c "\\copy (SELECT * FROM movie.keywords_ratings LIMIT 100) TO 'data_management/data_store/raw_data/keywords_ratings.csv' WITH CSV HEADER DELIMITER as ',';"
+--Вывод результата в файл
+psql -U postgres -h localhost -p 5433 -c "\\copy (SELECT * FROM movie.keywords_ratings LIMIT 100) TO 'data_management/data_store/raw_data/keywords_ratings.csv' WITH CSV HEADER DELIMITER as 'E';"
